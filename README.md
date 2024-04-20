@@ -1,6 +1,6 @@
-# 11ty Starter
+# LexJor Wedding Website
 
-This is jplace's [11ty](https://www.11ty.dev/) starter. It's configured to be deployed to [Netlify](https://www.netlify.com/).
+This is our wedding website! It's configured to be deployed to [Netlify](https://www.netlify.com/).
 
 ## Build
 
