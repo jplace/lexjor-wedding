@@ -7,7 +7,8 @@
     "build:site": "npx @11ty/eleventy",
     "build": "npm run build:site",
     "serve": "npx @11ty/eleventy --serve",
-    "serve:dev": "PROJECT_DEV=true npm run serve"
+    "serve:dev": "PROJECT_DEV=true npm run serve",
+    "transform-those-images": "node ./transform-those-images.js"
   },
   "keywords": [],
   "author": "",
@@ -32,6 +33,7 @@
     "posthtml-link-noreferrer": "^1.0.10",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.14",
+    "sharp": "^0.33.3",
     "tailwindcss": "^3.4.3",
     "terser": "^5.30.3"
   }
