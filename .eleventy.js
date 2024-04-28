@@ -1,4 +1,5 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 const markdownIt = require("markdown-it");
 const fs = require("fs");
 const posthtml = require("posthtml");
@@ -13,6 +14,19 @@ module.exports = function (config) {
 
   // Adding this just for the absoluteUrl filter used in 11ty examples
   config.addPlugin(pluginRss);
+
+  // Convert images to be optimized
+  config.addPlugin(eleventyImageTransformPlugin, {
+    outputDir: "./src/site/images/transformed",
+    urlPath: "/images/transformed",
+		extensions: "njk",
+		formats: ["webp", "jpeg"],
+		widths: ["auto"],
+		defaultAttributes: {
+			loading: "lazy",
+			decoding: "async",
+		},
+	});
 
   // Support rendering data to markdown
   let markdown = markdownIt({
