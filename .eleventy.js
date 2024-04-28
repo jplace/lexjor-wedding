@@ -1,5 +1,5 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
+const Image = require("@11ty/eleventy-img");
 const markdownIt = require("markdown-it");
 const fs = require("fs");
 const posthtml = require("posthtml");
@@ -16,16 +16,22 @@ module.exports = function (config) {
   config.addPlugin(pluginRss);
 
   // Convert images to be optimized
-  config.addPlugin(eleventyImageTransformPlugin, {
-    outputDir: "./src/site/images/transformed",
-    urlPath: "/images/transformed",
-		extensions: "njk",
-		formats: ["webp", "jpeg"],
-		widths: ["auto"],
-		defaultAttributes: {
+  config.addShortcode("image", async function(src, alt, sizes) {
+		let metadata = await Image(src, {
+      outputDir: "./dist/images/transformed/",
+      urlPath: "/images/transformed/",
+      formats: ["webp", "jpeg"],
+      widths: ["auto"],
+		});
+
+		let imageAttributes = {
+			alt,
+			sizes,
 			loading: "lazy",
 			decoding: "async",
-		},
+		};
+
+		return Image.generateHTML(metadata, imageAttributes);
 	});
 
   // Support rendering data to markdown
@@ -55,6 +61,7 @@ module.exports = function (config) {
       return value;
     }
   });
+
 
   // Pass through static assets
   config.addPassthroughCopy("./src/site/images");
