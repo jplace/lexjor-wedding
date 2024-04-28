@@ -52,10 +52,13 @@
     <link rel="stylesheet" href="/css/styles.css" />
     <!-- prettier-ignore -->
     {% endblock %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap" rel="stylesheet">
     <title>{{ title }}</title>
   </head>
   <!-- prettier-ignore -->
-  <body>
+  <body class="cool-background text-base">
     <!-- prettier-ignore -->
     {% block body %}
     {{ content | safe }}
