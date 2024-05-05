@@ -48,7 +48,7 @@
 		content: "";
 		height: 300px;
 		position: absolute;
-		width: 50px;
+		width: 25px;
 		z-index: 2;
 	}
 	
@@ -64,7 +64,7 @@
 	}
 	
 	.slide-track {
-		animation: scroll 40s linear infinite;
+		animation: scroll 60s linear infinite;
 		display: flex;
         align-items: start;
         width: calc(300px * 68);
