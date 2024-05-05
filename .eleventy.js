@@ -27,8 +27,6 @@ module.exports = function (config) {
 		let imageAttributes = {
 			alt,
 			sizes,
-			loading: "lazy",
-			decoding: "async",
 		};
 
 		return Image.generateHTML(metadata, imageAttributes);
