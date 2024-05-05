@@ -27,5 +27,55 @@
     width: 540px;
     height: 760px;
     background-color: #DFDBE5;
-    @apply p-4;
+    @apply drop-shadow-lg;
+}
+
+/* https://codepen.io/studiojvla/pen/qVbQqW */
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-300px * 34))}
+}
+
+.slider {
+    width: 540px;
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+	
+	&::before,
+	&::after {
+        background: linear-gradient(to right,  rgba(223, 219, 229, 1) 0%,rgba(223, 219, 229, 0) 100%);
+		content: "";
+		height: 300px;
+		position: absolute;
+		width: 50px;
+		z-index: 2;
+	}
+	
+	&::after {
+		right: 0;
+		top: 0;
+		transform: rotateZ(180deg);
+	}
+
+	&::before {
+		left: 0;
+		top: 0;
+	}
+	
+	.slide-track {
+		animation: scroll 40s linear infinite;
+		display: flex;
+        align-items: start;
+        width: calc(300px * 68);
+        height: 300px;
+
+        * {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+	}
+	
+
 }

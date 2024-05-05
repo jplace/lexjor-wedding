@@ -10,10 +10,15 @@ title: Save the Date
         </header>
         <main class="flex flex-col items-center mt-12">
             <p class="text-4xl jacques-francois-regular">February 8th, 2025</p>
-            <div class=" h-64 flex items-center gap-x-4 my-12 overflow-scroll">
-                {% image "./src/site/images/us/1.webp", "" %}
-                {% image "./src/site/images/us/2.webp", "" %}
-                {% image "./src/site/images/us/3.webp", "" %}
+            <div class="slider">
+	            <div class="slide-track">
+                    {% for i in range(1,35) %}
+                        {% image ["./src/site/images/us/", i, ".webp"] | join , "" %}
+                    {% endfor %}
+                    {% for i in range(1,35) %}
+                        {% image ["./src/site/images/us/", i, ".webp"] | join , "" %}
+                    {% endfor %}
+                </div>
             </div>
             <p class="px-12 text-xl text-center jacques-francois-regular">
                 For the wedding of <span class="jacques-francois-regular">Alexa & Jordan</span>
