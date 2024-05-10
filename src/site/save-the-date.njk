@@ -19,7 +19,7 @@ title: Save the Date
                         {% image ["./src/site/images/us/", i, ".webp"] | join , "" %}
                     {% endfor %}
                 </div>
-                <div id="discoBall1" class="absolute top-50 left-50 z-10">
+                <div id="discoBall1" class="absolute top-0 w-full h-64 bg-gradient-to-b from-black to-transparent z-10">
                     <div class="discoBallLight"></div>
                     <div class="discoBall">
                         <div class="discoBallMiddle"></div>
@@ -78,6 +78,7 @@ title: Save the Date
     });
 </script>
 <script>
+    // Adapted from https://codepen.io/msaetre/pen/eYwqrb
     function makeDiscoBall(discoBallContainer) {
         var discoBall = discoBallContainer.children[1];
         var t = 1;
