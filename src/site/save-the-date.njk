@@ -19,7 +19,7 @@ title: Save the Date
                         {% image ["./src/site/images/us/", i, ".webp"] | join , "" %}
                     {% endfor %}
                 </div>
-                <div id="discoBall1" class="absolute top-0 w-full h-96 bg-gradient-to-b from-black to-transparent z-10">
+                <div id="discoBall" class="hidden absolute top-0 w-full h-96 bg-gradient-to-b from-black to-transparent z-10">
                     <div class="discoBallLight"></div>
                     <div class="discoBall">
                         <div class="discoBallMiddle"></div>
@@ -63,28 +63,30 @@ title: Save the Date
     const $audio = document.getElementById("audio");
     const $play = document.getElementById("play");
     const $mute = document.getElementById("mute");
+    const $discoBall = document.getElementById("discoBall")
 
     $play.addEventListener('click', function () {
         $audio.play();
         $play.classList.add("hidden");
         $mute.classList.remove("hidden");
+        $discoBall.classList.remove("hidden");
     });
 
     $mute.addEventListener('click', function () {
         $audio.pause();
         audio.currentTime = 0
         $mute.classList.add("hidden");
+        $discoBall.classList.add("hidden");
         $play.classList.remove("hidden");
     });
-</script>
-<script>
+
     // Adapted from https://codepen.io/msaetre/pen/eYwqrb
     function makeDiscoBall(discoBallContainer) {
         var discoBall = discoBallContainer.children[1];
         var t = 1;
-        var radius = 50;
+        var radius = 100;
         var squareSize = 6.5;
-        var prec = 19.55;
+        var prec = 40;
         var fuzzy = 0.001;
         var inc = (Math.PI-fuzzy)/prec;
 
@@ -133,6 +135,5 @@ title: Save the Date
         }
     }
 
-    const $discoBall1 = document.getElementById("discoBall1");
-    makeDiscoBall($discoBall1);
+    makeDiscoBall($discoBall);
 </script>
