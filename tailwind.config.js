@@ -3,6 +3,10 @@ module.exports = {
   content: ["./src/**/*.{html,njk}"],
   theme: {
     extend: {
+      colors: {
+        ['lisbon-green']: '#033A15',
+        ['texture-gold']: '#D9AD00'
+      },
       keyframes: {
         ['pulse-mild']: {
           '50%': { color: '#033A15' } 
