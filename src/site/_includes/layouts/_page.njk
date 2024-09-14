@@ -1,0 +1,20 @@
+---
+layout: layouts/_base.njk
+---
+<div class="flex justify-center items-center">
+    <div class="wedding-site">
+        <div class="lisbon h-[80px]"></div>
+        <header class="flex justify-center">
+            <h1 class="px-4 text-5xl md:text-7xl lobster-regular my-8">Alexa &amp; Jordan</h1>
+        </header>
+        <nav class="mx-8 jacques-francois-regular">
+            <ul class="flex justify-center gap-4 md:gap-16">
+                <li><a class="underline" href="/">Home</a></li>
+                <li><a class="underline" href="/schedule">Schedule</a></li>
+                <li><a class="underline" href="/travel">Travel</a></li>
+                <li><a class="underline" href="/#">Registry</a></li>
+            </ul>
+        </nav>
+        {{ content | safe }}
+    </div>
+</div>
