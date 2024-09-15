@@ -87,11 +87,6 @@
 }
 
 .tree-kiss {
-    background-image: linear-gradient(to bottom, #F8F8F4, transparent), url("/images/tree-kiss.webp");
-    background-size: cover;
-}
-
-.tree-kiss-short1 {
     background-image: linear-gradient(to bottom, #F8F8F4, transparent), url("/images/tree-kiss-short1.webp");
     background-size: cover;
 }
