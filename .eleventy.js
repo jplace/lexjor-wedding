@@ -62,6 +62,7 @@ module.exports = function (config) {
 
 
   // Pass through static assets
+  config.addPassthroughCopy("./src/site/videos");
   config.addPassthroughCopy("./src/site/audio");
   config.addPassthroughCopy("./src/site/images");
   config.addPassthroughCopy("./src/site/fonts");
