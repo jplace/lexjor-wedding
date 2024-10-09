@@ -1,0 +1,43 @@
+---
+layout: layouts/_page.njk
+title: Gifts - LexJor 2025
+---
+<main class="mx-8 my-8 nunito-regular space-y-14">
+    <section class="space-y-6">
+        <h2 class="jacques-francois-regular text-2xl">Gifts</h2>
+        <p>We are so lucky to already have what we need. So, in lieu of gifts, please consider contributing to an organization doing meaningful work in the Bay Area. We'll provide a link to a registry facilitating donations to a few suggested organizations. Please check back in November for access to the registry.</p>
+        <p>
+            <button id="open-button" class="group flex">
+                <div class="animate-bounce mr-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="text-lisbon-green/20 w-5 h-5" version="1.0"  width="500" height="500" viewBox="0 0 75 75">
+                        <path d="M39.389,13.769 L22.235,28.606 L6,28.606 L6,47.699 L21.989,47.699 L39.389,62.75 L39.389,13.769z" style="stroke:currentColor;stroke-width:5;stroke-linejoin:round;fill:currentColor;"/>
+                        <path d="M48,27.6a19.5,19.5 0 0 1 0,21.4M55.1,20.5a30,30 0 0 1 0,35.6M61.6,14a38.8,38.8 0 0 1 0,48.6" style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round"/>
+                    </svg>
+                </div>
+                <div class="text-start">
+                    tl;dr give to charity<span class="text-white group-hover:text-[#303030]">?</span> please no<span class="text-white group-hover:text-[#303030]">!</span> presents<span class="text-white group-hover:text-[#303030]">!!!</span>
+                </div>
+            </button>
+        </p>
+    </section>
+</main>
+<dialog id="the-dialog">
+    <video id="the-video" controls class="w-full md:w-[50vw]">
+        <source src="/videos/please-no-presents.mp4" type="video/mp4" />
+    </video>
+</dialog>
+<script>
+    const $openButton = document.getElementById("open-button");
+    const $closeButton = document.getElementById("close-button");
+    const $dialog = document.getElementById("the-dialog");
+    const $video = document.getElementById("the-video");
+
+    $video.addEventListener('ended', function () {
+        $dialog.close();
+    });
+
+    $openButton.addEventListener('click', function () {
+        $dialog.showModal();
+        $video.play();
+    });
+</script>

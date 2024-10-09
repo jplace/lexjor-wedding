@@ -1,0 +1,21 @@
+---
+layout: layouts/_base.njk
+---
+<div class="flex justify-center items-center">
+    <div class="wedding-site">
+        <div class="lisbon h-[80px]"></div>
+        <header class="flex flex-col items-center px-4 my-8">
+            <h1 class="text-5xl md:text-7xl lobster-regular">Alexa &amp; Jordan</h1>
+        </header>
+        <nav class="mx-8 jacques-francois-regular">
+            <ul class="flex justify-center gap-4 md:gap-16  border-lisbon-green">
+                <li><a class="block pb-1 border-b-2 {{ "border-lisbon-green" if page.url == "/" else "border-transparent" }} hover:border-lisbon-green focus:border-lisbon-green outline-none transition-all" href="/">RSVP</a></li>
+                <li><a class="block pb-1 border-b-2 {{ "border-lisbon-green" if page.url == "/wedding/" else "border-transparent" }} hover:border-lisbon-green focus:border-lisbon-green outline-none transition-all" href="/wedding">Wedding</a></li>
+                <li><a class="block pb-1 border-b-2 {{ "border-lisbon-green" if page.url == "/events/" else "border-transparent" }} hover:border-lisbon-green focus:border-lisbon-green outline-none transition-all" href="/events">Events</a></li>
+                <li><a class="block pb-1 border-b-2 {{ "border-lisbon-green" if page.url == "/travel/" else "border-transparent" }} hover:border-lisbon-green focus:border-lisbon-green outline-none transition-all" href="/travel">Travel</a></li>
+                <li><a class="block pb-1 border-b-2 {{ "border-lisbon-green" if page.url == "/gifts/" else "border-transparent" }} hover:border-lisbon-green focus:border-lisbon-green outline-none transition-all" href="/gifts">Gifts</a></li>
+            </ul>
+        </nav>
+        {{ content | safe }}
+    </div>
+</div>
